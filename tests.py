@@ -4,12 +4,25 @@ from main import BooksCollector
 
 class TestBooksCollector:
 
+    def test_add_new_book_two_books_added(self):
+        collector = BooksCollector()
+        collector.add_new_book('Вино из одуванчиков')
+        collector.add_new_book('Посёлок')
+        assert len(collector.books_genre) == 2
+        
+
     def test_add_new_book_add_same_book_inability(self):
         collector = BooksCollector()
         collector.add_new_book('Звёздные войны: Войны клонов')
         collector.add_new_book('Звёздные войны: Войны клонов')
         assert len(collector.books_genre) == 1 
 
+    def test_set_book_genre_genre_added(self):
+        collector = BooksCollector()
+        collector.add_new_book('Застава на Якорном поле')
+        collector.set_book_genre('Застава на Якорном поле', 'Фантастика')
+        assert collector.books_genre['Застава на Якорном поле'] == 'Фантастика'
+    
     def test_set_book_genre_set_nonexistent_genre_inability(self):
         collector = BooksCollector()
         collector.add_new_book('Вархаммер 40к для чайников')
@@ -24,7 +37,7 @@ class TestBooksCollector:
         collector = BooksCollector()
         collector.add_new_book(book)
         collector.set_book_genre(book, genre)
-        assert collector.books_genre[book] == genre
+        assert collector.get_book_genre(book) == genre
 
     def test_get_books_with_specific_genre_get_two_books_list(self):
         collector = BooksCollector()

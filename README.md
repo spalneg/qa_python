@@ -1,4 +1,6 @@
+Тест **test_add_new_book_two_books_added** проверяет возможность добавить две книги в коллекцию. \
 Тест **test_add_new_book_add_same_book_inability** проверяет невозможность добавить одинаковые книги в коллекцию.\
+Тест **test_set_book_genre_genre_added** проверяет возможность добавить жанр книге в коллкеции.\
 Тест **test_set_book_genre_set_nonexistent_genre_inability** проверяет невозможность добавить в коллекцию отсутствующий в заданном списке genre жанр.\
 Тест **test_get_book_genre_return_genre** проверяет вывод разных жанров по названию книг из коллекции.\
 Тест **test_get_books_with_specific_genre_get_two_books_list** проверяет что из коллекции возвращаются только книги с заданным методом жанром.\
